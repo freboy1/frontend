@@ -1,0 +1,17 @@
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-section h1 {
+    font-size: 16px;
+}
+
+.header-section a {
+    text-decoration: none;
+}
+
+.header-nav a {
+    margin-right: 35px;
+}
