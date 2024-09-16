@@ -1,0 +1,12 @@
+.footer {
+    background-color: black;
+    color: white;
+}
+.footer p,
+.footer a {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
