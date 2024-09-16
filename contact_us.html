@@ -3,43 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document Title</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="contact-us.css">
+        <title>AutoHub</title>
     </head>
     
-    <body>
-        <header>
-            <h1><a href="index.html">AutoHub</a></h1>
-            <nav>
+    <body class="body contact-us">
+        <header class="header-section">
+            <div class="header-navigation">
+                <a href="index.html">AutoHub</a>
+                <nav class="header-nav">
                 <a href="catalog.html" >Catalog</a>
                 <a href="contact_us.html" >Contact Us</a>
-            </nav>
+                </nav>
+            </div>
         </header>
-        <hr>
-        <main>
-            <h1>Contact Us</h1>
-            <h2>Feel free to contact us with questions, potencial partnerships or media inquiries</h2>
+        <main class="form">
+            <h1 class="form_header">Contact Us</h1>
+            <h2 class="form_desc">Feel free to contact us with questions, potencial partnerships or media inquiries</h2>
             <form action="/">
-                <label for="name">Name: </label>
-                <input type="text" id="name"> <br> <br>
-                <label for="email">Email: </label>
-                <input type="email" id="email"> <br> <br>
-                <label for="auto">Auto type: </label>
-                <select name="auto" id="auto">
-                    <option value="car">Car</option>
-                    <option value="track">Track</option>
-                    <option value="motorcycle">Motorcycle</option>
-                </select> <br> <br>
-                <label for="comments">Comments</label>
-                <textarea name="comments" id="comments"></textarea> <br> <br>
+                <div class="main_contact_info">
+                    <input type="text" id="name" placeholder="Your Name"> <br> <br>
+                    <select name="auto" id="auto" >
+                    <option value="idk" disabled>Your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="crossiant">Crossiant</option>
+                    <option value="helicopter">Helicopter</option>
+                </select>
+                    <input type="email" id="email" placeholder="Your Email"> <br> <br>
+                </div>
+                <textarea name="comments" id="comments" placeholder="Your Comments"></textarea> <br> <br>
                 <button>Submit</button>
             </form>
         </main>
-        <hr>
-        <footer>
-            <p>Name: Dautov Alisher</p>
-            <p>Date: 08:09:2024</p>
+        <footer class="footer">
+            <p class="footer_name">Name: Dautov Alisher</p>
             <p>Student ID: 230989</p>
-            <a href="https://github.com/freboy1">GitHub</a>
+            <div class="footer_links">
+                <a href="https://github.com/freboy1">GitHub</a>
+                <a href="https://www.linkedin.com/in/freboy1/">
+                </a>
+            </div>
         </footer>
     </body>
 </html>

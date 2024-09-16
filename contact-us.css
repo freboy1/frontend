@@ -1,0 +1,58 @@
+.contact-us {
+    background-color: black;
+}
+
+.form {
+    background-color: white;
+}
+.form_desc, 
+.form_header {
+    display: flex;
+    justify-content: center;
+}
+.form_header {
+    padding-top: 100px;
+    font-family: RobotoB;
+    font-size: 45px;
+    margin-bottom: 0;
+}
+
+.form_desc {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+input,
+.main_contact_info select {
+    width: 270px;
+    height: 57px;
+    border-color: #0066FF;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.main_contact_info {
+    display: flex;
+    justify-content: center;
+}
+.main_contact_info input,
+.main_contact_info select {
+    margin-right: 40px;
+}
+textarea {
+    width: 580px;
+    height: 291px;
+    border-color: #0066FF;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 50px auto 0 auto;
+    display: block;
+}
+button {
+    width: 184px;
+    height: 55px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin: 0 auto 50px auto; 
+    display: block;
+}
