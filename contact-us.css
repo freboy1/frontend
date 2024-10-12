@@ -56,3 +56,16 @@ button {
     margin: 0 auto 50px auto; 
     display: block;
 }
+
+
+
+.faq-panel { 
+    display: none; 
+    padding: 10px; 
+    background-color: #f1f1f1; 
+}
+
+.faq-panel p {
+    display: flex;
+    justify-content: center;
+}

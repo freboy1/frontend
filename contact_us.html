@@ -90,10 +90,11 @@
                 </div>
             </nav>
         </header>
+
         <main class="form">
             <h1 class="form_header">Contact Us</h1>
             <h2 class="form_desc">Feel free to contact us with questions, potencial partnerships or media inquiries</h2>
-            <form action="/">
+            <form action="/" id="myForm">
                 <div class="main_contact_info">
                     <input type="text" id="name" placeholder="Your Name"> <br> <br>
                     <select name="auto" id="auto" >
@@ -106,9 +107,22 @@
                     <input type="email" id="email" placeholder="Your Email"> <br> <br>
                 </div>
                 <textarea name="comments" id="comments" placeholder="Your Comments"></textarea> <br> <br>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </main>
+
+        <button class="accordion btn btn-primary">FAQ</button>
+        <div class="faq-panel">
+            <p>What is AutoHub?</p>
+            <p>We provide vehicle sales, repairs, maintenance, leasing, and financing.</p>
+            <p>How can I contact AutoHub?</p>
+            <p>Reach us via our contact form, call +77775716924</p>
+            <p>What vehicles are available?</p>
+            <p>We offer a wide range of new and used cars, trucks, and SUVs.</p>
+        </div>
+
+
+
        <footer class="footer">
         <div class="container text-center">
             <div class="row">
@@ -165,7 +179,34 @@
               
 
           </div>
-       </footer> 
+       </footer>
+       
+        <script>
+            const acc = document.getElementsByClassName('accordion');
+            for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+            });
+            }
+        </script>
+       <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    if (name === '') {
+        alert('Name is required');
+        event.preventDefault(); // Prevent form submission if name is empty
+    } else if (!email.includes('@') || !email.includes('.')) {
+        alert('Please enter a valid email');
+        event.preventDefault(); // Prevent form submission if email is invalid
+    }
+});
+
+        </script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

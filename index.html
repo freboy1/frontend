@@ -130,6 +130,36 @@
                     </button>
                 </div>
             </section>
+
+            <button onclick="openForm()" class="btn btn-primary">Subscribe</button>
+
+            <div id="popupForm" style="display:none;">
+              <form>
+                <h2>Subscribe to our Newsletter</h2>
+                <input type="email" placeholder="Email">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="button" onclick="closeForm()" class="btn btn-secondary">Close</button>
+              </form>
+            </div>
+            
+            <script>
+            function openForm() {
+              document.getElementById('popupForm').style.display = 'block';
+            }
+            
+            function closeForm() {
+              document.getElementById('popupForm').style.display = 'none';
+            }
+            </script>
+            
+            <style>
+            #popupForm {
+              position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+              background-color: white; padding: 20px; border: 1px solid #ccc;
+            }
+            </style>
+    
+
             <section class="advantages">
                 <h2 class="advantages_header">Why AutoHub</h2>
                 <ul class="advantages_lists">
@@ -167,6 +197,17 @@
                     </li>
                 </ul>
             </section>
+
+            <button onclick="changeBackgroundColor()" class="btn btn-primary">Change Background Color</button>
+
+            <script>
+            function changeBackgroundColor() {
+              document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            }
+            </script>
+            
+
+
             <section class="blogs">
                 <h2 class="blogs_header">Welcome to AutoHub</h2>
                 <h3 class="blogs_description">Find Out About Our Blogs</h3>
