@@ -53,3 +53,33 @@
 .blogs_videos iframe {
     margin-right: 50px;
 }
+
+.footer {
+    margin-top: 50px;
+    background-color: #fbfbfb;
+}
+.col, 
+.github-link,
+.col a{
+    color: #7a7a7a;
+    font-size: 20px;
+}
+.col-head {
+    font-size: 25px;
+}
+.images {
+    margin: auto;
+}
+.idk {
+    
+    margin: auto;
+}
+.custom-height .carousel-item img {
+    height: 600px; 
+    object-fit: cover; 
+}
+
+#popupForm {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background-color: white; padding: 20px; border: 1px solid #ccc;
+  }
