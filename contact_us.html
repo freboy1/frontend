@@ -107,7 +107,7 @@
                     <input type="email" id="email" placeholder="Your Email"> <br> <br>
                 </div>
                 <textarea name="comments" id="comments" placeholder="Your Comments"></textarea> <br> <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="it-is-my-car">Submit</button>
             </form>
         </main>
 
@@ -221,6 +221,13 @@
                     const prevIndex = (currentIndex - 1 + navItems.length) % navItems.length; // Loop back to the last item
                     navItems[prevIndex].focus(); // Set focus on the previous item
                 }
+            });
+        </script>
+
+        <script>
+            const sound = new Audio('./audio/mycar.m4a');
+            document.getElementById('it-is-my-car').addEventListener('click', () => {
+                sound.play();
             });
         </script>
         
