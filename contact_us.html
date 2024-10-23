@@ -121,16 +121,6 @@
             <p>We offer a wide range of new and used cars, trucks, and SUVs.</p>
         </div>
 
-        <script>
-            const acc = document.getElementsByClassName('accordion');
-            for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener('click', function() {
-                const panel = this.nextElementSibling;
-                panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
-            });
-            }
-        </script>
-
 
        <footer class="footer">
         <div class="container text-center">
@@ -190,47 +180,11 @@
           </div>
        </footer>
        
-       <script>
-        document.getElementById('myForm').addEventListener('submit', function(event) {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
         
-        if (name === '') {
-            alert('Name is required');
-            event.preventDefault();
-        } else if (!email.includes('@') || !email.includes('.')) {
-            alert('Please enter a valid email');
-            event.preventDefault(); // Prevent form submission if email is invalid
-        }
-    });
-
-        </script>
-        <script>
-            document.addEventListener('keydown', (event) => {
-                const navItems = document.querySelectorAll('.nav-link'); // Select all navigation links
-                let currentIndex = Array.from(navItems).findIndex(item => document.activeElement === item);
-        
-                switch (event.key) {
-                    case 'ArrowRight':
-                    // Move to next item
-                        const nextIndex = (currentIndex + 1) % navItems.length; // Loop back to the first item
-                        navItems[nextIndex].focus(); // Set focus on the next item
-                        break
-                    case 'ArrowLeft':
-                    // Move to previous item
-                    const prevIndex = (currentIndex - 1 + navItems.length) % navItems.length; // Loop back to the last item
-                    navItems[prevIndex].focus(); // Set focus on the previous item
-                }
-            });
-        </script>
-
-        <script>
-            const sound = new Audio('./audio/mycar.m4a');
-            document.getElementById('it-is-my-car').addEventListener('click', () => {
-                sound.play();
-            });
-        </script>
-        
+        <script src="audio.js"></script>
+        <script src="keyboardNav.js"></script>
+        <script src="formValidation.js"></script>
+        <script src="faq.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
