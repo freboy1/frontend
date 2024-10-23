@@ -69,3 +69,46 @@ button {
     display: flex;
     justify-content: center;
 }
+
+
+
+.nav-link active,
+            .nav-item  {
+                font-size: 1.3rem;
+            }
+            .dropdown-item {
+                font-size: 1.1rem;
+            }
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+            .form-control {
+                font-size: 1.1rem;    
+            }
+            .btn-outline-success {
+                font-size: 1.3rem;
+            }
+            .container-fluid {
+                margin-left: 120px;
+                margin-right: 50px;
+            }
+            textarea {
+            margin: 50px auto 0 auto;
+            display: block;
+            }
+            .btn-primary {
+                margin: 0 auto 50px auto; 
+                display: block;
+            }
+            .footer {
+                background-color: #fbfbfb;
+            }
+            .col, 
+            .github-link,
+            .col a{
+                color: #7a7a7a;
+                font-size: 20px;
+            }
+            .col-head {
+                font-size: 25px;
+            }
