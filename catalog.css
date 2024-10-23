@@ -48,3 +48,16 @@
             .card-img-top {
                 height: 170px;
             }
+
+            .star {
+                font-size: 20px;
+                cursor: pointer;
+                color: gray;
+            }
+            .star:hover {
+                color: lightgray;
+            }
+            .rating {
+              display: flex;
+              justify-content: space-around;
+            }
