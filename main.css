@@ -1,16 +1,22 @@
-.body {
+/* Default styles (Light Mode) */
+body {
     margin: 0;
-    background-color: white;
+    background-color: #ffffff; /* Light mode body background */
+    color: black; /* Set default text color to black */
 }
+
 .advantages_header,
 .blogs_header {
     margin-top: 150px;
-    font-family: RobotoB;
+    font-family: RobotoB, sans-serif; /* Added fallback font */
     display: flex;
     justify-content: center;
     font-size: 45px;
     margin-bottom: 0;
+    color: black; /* Set header text color to black in light mode */
+    background-color: white; /* Set header background to #1f1f1f */
 }
+
 .advantages_lists {
     margin-top: 50px;
     list-style-type: none;
@@ -34,6 +40,7 @@
     justify-content: center;
     text-align: center;
     font-size: 20px;
+    color: black; /* Set list item text color to white */
 }
 
 .blogs_description {
@@ -41,7 +48,8 @@
     display: flex;
     justify-content: center;
     font-size: 30px;
-    font-family: RobotoM;
+    font-family: RobotoM, sans-serif; /* Added fallback font */
+    color: black; /* Set blogs description text color to white */
 }
 
 .blogs_videos {
@@ -54,32 +62,78 @@
     margin-right: 50px;
 }
 
+/* Light Mode Footer Styles */
 .footer {
     margin-top: 50px;
-    background-color: #fbfbfb;
+    background-color: #1f1f1f; /* Set footer background to #1f1f1f */
+    color: white; /* Set footer text color to white */
 }
+
 .col, 
 .github-link,
-.col a{
-    color: #7a7a7a;
+.col a {
+    color: white; /* Set footer text color to white */
     font-size: 20px;
 }
+
 .col-head {
     font-size: 25px;
+    color: white; /* Set footer header text color to white */
 }
-.images {
-    margin: auto;
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #141414; /* Change dark mode background to #141414 */
+    color: white; /* Light text color */
 }
-.idk {
-    
-    margin: auto;
+
+body.dark .advantages_header,
+body.dark .blogs_header {
+    color: white; /* Change headers to white in dark mode */
+    background-color: #141414;
 }
+
+body.dark .advantages_lists li h3,
+body.dark .advantages_lists li p,
+body.dark .blogs_description {
+    color: white; /* Light text for lists and descriptions in dark mode */
+}
+
+body.dark .footer {
+    background-color: #1f1f1f; /* Dark mode footer background */
+}
+
+body.dark .col, 
+body.dark .github-link,
+body.dark .col a {
+    color: white; /* Light text color for links in dark mode */
+}
+
+body.dark .col-head {
+    color: white; /* Light color for header text in dark mode */
+}
+
+.images, .idk {
+    margin: auto; /* Center images and idk */
+}
+
 .custom-height .carousel-item img {
     height: 600px; 
     object-fit: cover; 
 }
 
 #popupForm {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background-color: white; padding: 20px; border: 1px solid #ccc;
-  }
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: white; /* Light background for popup */
+    padding: 20px; 
+    border: 1px solid #ccc;
+}
+
+/* Dark Mode Popup Styles */
+body.dark #popupForm {
+    background-color: #444; /* Dark background for popup */
+    border: 1px solid #555; /* Darker border for popup */
+}
