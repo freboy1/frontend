@@ -1,63 +1,119 @@
-.nav-link active,
-            .nav-item  {
-                font-size: 1.3rem;
-            }
-            .dropdown-item {
-                font-size: 1.1rem;
-            }
-            .navbar-brand {
-                font-size: 1.4rem;
-            }
-            .form-control {
-                font-size: 1.1rem;    
-            }
-            .btn-outline-success {
-                font-size: 1.3rem;
-            }
-            .container-fluid {
-                margin-left: 120px;
-                margin-right: 50px;
-            }
-            textarea {
-            margin: 50px auto 0 auto;
-            display: block;
-            }
-            .btn-primary {
-                margin: 0 auto 50px auto; 
-                display: block;
-            }
-            .footer {
-                background-color: #fbfbfb;
-            }
-            .col, 
-            .github-link,
-            .col a{
-                color: #7a7a7a;
-                font-size: 20px;
-            }
-            .col-head {
-                font-size: 25px;
-            }
-            .car-cards {
-                display: flex;
-                justify-content: center;
-            }
-            .car-cards div {
-                margin-right: 75px;
-            }
-            .card-img-top {
-                height: 170px;
-            }
+/* Navigation */
+.nav-link.active,
+.nav-item {
+    font-size: 1.3rem;
+}
 
-            .star {
-                font-size: 20px;
-                cursor: pointer;
-                color: gray;
-            }
-            .star:hover {
-                color: lightgray;
-            }
-            .rating {
-              display: flex;
-              justify-content: space-around;
-            }
+.dropdown-item {
+    font-size: 1.1rem;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+}
+
+.form-control {
+    font-size: 1.1rem;    
+}
+
+.btn-outline-success {
+    font-size: 1.3rem;
+}
+
+.container-fluid {
+    margin-left: 120px;
+    margin-right: 50px;
+}
+
+/* Textarea alignment */
+textarea {
+    margin: 50px auto 0 auto;
+    display: block;
+}
+
+/* Button alignment */
+.btn-primary {
+    margin: 0 auto 50px auto; 
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: #fbfbfb;
+}
+
+.col, 
+.github-link,
+.col a {
+    color: #7a7a7a;
+    font-size: 20px;
+}
+
+.col-head {
+    font-size: 25px;
+}
+
+/* Car Cards */
+.car-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.car-cards div {
+    margin-right: 75px;
+}
+
+.card-img-top {
+    height: 170px;
+}
+
+/* Star rating */
+.star {
+    font-size: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.star:hover {
+    color: lightgray;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Dark Mode Styles */
+body.dark .footer {
+    background-color: #1f1f1f;
+}
+
+body.dark .col,
+body.dark .github-link,
+body.dark .col a {
+    color: #ffffff;
+}
+
+body.dark .car-cards .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark .car-cards .card-title,
+body.dark .car-cards .card-text,
+body.dark .car-cards .btn-primary {
+    color: #ffffff;
+}
+
+body.dark .btn-primary {
+    background-color: #333333;
+    border-color: #ffffff;
+}
+
+body.dark .rating .star {
+    color: #f1c40f;
+}
+
+body.dark .rating .star:hover {
+    color: #ffd700;
+}
