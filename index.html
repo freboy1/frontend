@@ -238,54 +238,12 @@
                   </div>
               </div>
         </footer> 
-        <script>
-            // Function to handle login or logout based on localStorage
-function handleAuth() {
-    const users = JSON.parse(localStorage.getItem('users'));
-
-    if (users && users.length > 0) {
-        // If users exist, perform logout
-        localStorage.removeItem('theme');
-        localStorage.removeItem('users');
-        localStorage.removeItem('currentUserEmail');
-
-        // Redirect to login page
-        window.location.href = 'login.html';
-    } else {
-        // If no users, redirect to login page
-        window.location.href = 'login.html';
-    }
-}
-
-// Function to set the initial button text based on localStorage
-function setAuthButtonText() {
-    const users = JSON.parse(localStorage.getItem('users'));
-    const authButton = document.getElementById('authButton');
-
-    // Set button text based on presence of users
-    authButton.textContent = (users && users.length > 0) ? 'Logout' : 'Login';
-}
-
-// Set the button text on page load
-window.addEventListener('DOMContentLoaded', setAuthButtonText);
-
-        </script>
         <script src="keyboardNav.js"></script>
         <script src="changebackground.js"></script>
         <script src="form.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="theme.js"></script>
-        <script>
-            document.getElementById('searchForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the default form submission
-
-    const searchQuery = document.getElementById('searchInput').value;
-    if (searchQuery.trim() !== '') {
-        // Redirect to Google with the search query
-        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-    }
-});
-
-        </script>
+        <script src="auth.js"></script>
+        <script src="search.js"></script>
     </body>
 </html>
