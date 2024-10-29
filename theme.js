@@ -38,4 +38,35 @@ function toggleTheme() {
 window.addEventListener('DOMContentLoaded', () => {
     const currentTheme = localStorage.getItem('theme') || 'light';
     setTheme(currentTheme); // Apply the saved theme
+
+    // Update the Logout/Login button based on user data
+    updateAuthButton();
 });
+
+// Function to update the Auth button based on user presence in localStorage
+function updateAuthButton() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const logoutButton = document.getElementById('logoutButton');
+    
+    if (users.length > 0) {
+        // If there are users, show Logout button
+        logoutButton.textContent = 'Logout';
+        logoutButton.onclick = logout; // Set logout function
+    } else {
+        // If no users, show Login button
+        logoutButton.textContent = 'Login';
+        logoutButton.onclick = function() {
+            window.location.href = 'login.html'; // Redirect to login page
+        };
+    }
+}
+
+// Function to log out the user
+function logout() {
+    // Clear the theme and user session data
+    localStorage.removeItem('theme');
+    localStorage.removeItem('users'); // Optionally clear all users or just reset state
+
+    // Redirect to login page
+    window.location.href = 'login.html';
+}

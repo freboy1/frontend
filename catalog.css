@@ -109,3 +109,12 @@ body.dark .btn-primary {
     background-color: #333333;
     border-color: #ffffff;
 }
+
+
+.d-flex select {
+    color: grey;
+}
+
+body.dark .d-flex select {
+    color: grey;
+}
