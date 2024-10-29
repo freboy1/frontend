@@ -1,3 +1,4 @@
+/* Default (Light Mode) Styles */
 .contact-us {
     background-color: black;
 }
@@ -57,8 +58,6 @@ button {
     display: block;
 }
 
-
-
 .faq-panel { 
     display: none; 
     padding: 10px; 
@@ -70,45 +69,80 @@ button {
     justify-content: center;
 }
 
-
-
+/* Navbar and Footer Styles */
 .nav-link active,
-            .nav-item  {
-                font-size: 1.3rem;
-            }
-            .dropdown-item {
-                font-size: 1.1rem;
-            }
-            .navbar-brand {
-                font-size: 1.4rem;
-            }
-            .form-control {
-                font-size: 1.1rem;    
-            }
-            .btn-outline-success {
-                font-size: 1.3rem;
-            }
-            .container-fluid {
-                margin-left: 120px;
-                margin-right: 50px;
-            }
-            textarea {
-            margin: 50px auto 0 auto;
-            display: block;
-            }
-            .btn-primary {
-                margin: 0 auto 50px auto; 
-                display: block;
-            }
-            .footer {
-                background-color: #fbfbfb;
-            }
-            .col, 
-            .github-link,
-            .col a{
-                color: #7a7a7a;
-                font-size: 20px;
-            }
-            .col-head {
-                font-size: 25px;
-            }
+.nav-item {
+    font-size: 1.3rem;
+}
+.dropdown-item {
+    font-size: 1.1rem;
+}
+.navbar-brand {
+    font-size: 1.4rem;
+}
+.form-control {
+    font-size: 1.1rem;    
+}
+.btn-outline-success {
+    font-size: 1.3rem;
+}
+.container-fluid {
+    margin-left: 120px;
+    margin-right: 50px;
+}
+textarea {
+    margin: 50px auto 0 auto;
+    display: block;
+}
+.btn-primary {
+    margin: 0 auto 50px auto; 
+    display: block;
+}
+.footer {
+    background-color: #fbfbfb;
+}
+.col, 
+.github-link,
+.col a {
+    color: #7a7a7a;
+    font-size: 20px;
+}
+.col-head {
+    font-size: 25px;
+}
+
+/* Dark Mode Styles */
+body.dark .form {
+    background-color: #141414;  /* Dark background for the form */
+    color: #ffffff;             /* White text */
+}
+
+body.dark .form_desc,
+body.dark .form_header {
+    color: #ffffff;             /* White text for headings */
+}
+
+body.dark .input,
+body.dark .main_contact_info select,
+body.dark textarea {
+    background-color: #333333;  /* Darker input fields */
+    color: #ffffff;             /* White text */
+    border-color: #555555;      /* Subtle border color */
+}
+
+
+body.dark .faq-panel {
+    background-color: #333333;  /* Darker FAQ panel */
+    color: #ffffff;             /* White text */
+}
+
+body.dark .footer {
+    background-color: #1f1f1f;  /* Dark footer */
+    color: #ffffff;
+}
+
+body.dark .col, 
+body.dark .github-link,
+body.dark .col a {
+    color: #cccccc;             /* Slightly lighter text for links */
+}
