@@ -62,3 +62,19 @@ a {
     color: white;
     text-decoration: none;
 }
+
+
+            /* General Styles */
+            
+            
+            /* Light Mode Styles */
+            body .navbar-brand {
+                color: black; /* Set navbar brand color to black in light mode */
+            }
+            
+            body .nav-link,
+            body .nav-item,
+            body .form-control {
+                color: black; /* Ensure all nav links and form controls are black in light mode */
+            }
+                       
