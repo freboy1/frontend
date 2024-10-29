@@ -1,6 +1,6 @@
-# Car Cards Display
+# AutoHub
 
-A simple web application that displays a collection of car cards using HTML, CSS, and JavaScript.
+A simple Auto website.
 
 ## Features
 
@@ -24,3 +24,8 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/freboy1/frontend.git
    ```
+2. Navigate to the project directory:
+   ```bash
+   cd frontend
+   ```
+3. Open **index.html** in your web browser.
