@@ -109,11 +109,3 @@ body.dark .btn-primary {
     background-color: #333333;
     border-color: #ffffff;
 }
-
-body.dark .rating .star {
-    color: #f1c40f;
-}
-
-body.dark .rating .star:hover {
-    color: #ffd700;
-}

@@ -48,14 +48,20 @@ textarea {
     margin: 50px auto 0 auto;
     display: block;
 }
-button {
+
+
+.button {
+    padding: 10px 20px; /* Add padding for better touch area */
+    background-color: #007bff; /* Use a Bootstrap primary color */
+    color: white;
     width: 184px;
     height: 55px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    margin: 0 auto 50px auto; 
-    display: block;
+    font-size: 18px; /* Slightly smaller font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    cursor: pointer; /* Change cursor on hover */
+    margin: 0 auto; /* Center the button */
 }
 
 .faq-panel { 
