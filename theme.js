@@ -10,34 +10,63 @@ document.querySelector('form').addEventListener('submit', function (e) {
 
     if (userExists) {
         const user = users.find(user => user.email === email);
-        setTheme(user.theme); // Set user-specific theme
-        window.location.href = 'index.html';
+        if (user.password === password) {
+            localStorage.setItem('currentUser', JSON.stringify(user)); // Track the logged-in user
+            setTheme(user.theme, email); // Set user-specific theme
+            window.location.href = 'index.html';
+        } else {
+            alert("Incorrect password.");
+        }
     } else {
         // If user doesn't exist, create a new one
-        users.push({ email, password, theme: 'light' }); // Default theme is 'light'
+        const newUser = { email, password, theme: 'light' }; // Default theme is 'light'
+        users.push(newUser);
         localStorage.setItem('users', JSON.stringify(users));
-        setTheme('light'); // Set default theme for new user
+        localStorage.setItem('currentUser', JSON.stringify(newUser)); // Track new user
+        setTheme('light', email); // Set default theme for new user
         window.location.href = 'index.html';
     }
 });
 
 // Function to set the theme
-function setTheme(theme) {
+function setTheme(theme, userEmail = null) {
     document.body.className = theme; // Set class for light or dark theme
-    localStorage.setItem('theme', theme); // Save current theme in localStorage
+
+    // Update the current user's theme if an email is provided
+    if (userEmail) {
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        const userIndex = users.findIndex(user => user.email === userEmail);
+        
+        if (userIndex !== -1) {
+            users[userIndex].theme = theme; // Update theme for the specific user
+            localStorage.setItem('users', JSON.stringify(users)); // Save updated users array
+        }
+
+        // Update the current user's theme in localStorage
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.email === userEmail) {
+            currentUser.theme = theme;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+    }
 }
 
 // Function to toggle the theme
 function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = JSON.parse(localStorage.getItem('currentUser')).theme || 'light';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme); // Update the theme
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (currentUser) {
+        setTheme(newTheme, currentUser.email); // Update the theme for the current user
+    }
 }
 
 // Check the saved theme in localStorage on page load
 window.addEventListener('DOMContentLoaded', () => {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    setTheme(currentTheme); // Apply the saved theme
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentTheme = currentUser ? currentUser.theme : 'light';
+    setTheme(currentTheme, currentUser ? currentUser.email : null); // Apply the saved theme
 
     // Update the Logout/Login button based on user data
     updateAuthButton();
@@ -45,15 +74,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Function to update the Auth button based on user presence in localStorage
 function updateAuthButton() {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const logoutButton = document.getElementById('logoutButton');
     
-    if (users.length > 0) {
-        // If there are users, show Logout button
+    if (currentUser) {
+        // If a user is logged in, show Logout button
         logoutButton.textContent = 'Logout';
         logoutButton.onclick = logout; // Set logout function
     } else {
-        // If no users, show Login button
+        // If no user is logged in, show Login button
         logoutButton.textContent = 'Login';
         logoutButton.onclick = function() {
             window.location.href = 'login.html'; // Redirect to login page
@@ -61,11 +90,10 @@ function updateAuthButton() {
     }
 }
 
-// Function to log out the user
+// Function to log out the current user
 function logout() {
-    // Clear the theme and user session data
-    localStorage.removeItem('theme');
-    localStorage.removeItem('users'); // Optionally clear all users or just reset state
+    // Clear the theme and current user session data
+    localStorage.removeItem('currentUser'); // Only log out the current user
 
     // Redirect to login page
     window.location.href = 'login.html';
