@@ -137,3 +137,7 @@ body.dark #popupForm {
     background-color: #444; /* Dark background for popup */
     border: 1px solid #555; /* Darker border for popup */
 }
+
+body.dark .navbar-toggler {
+    background-color: #ffffff;
+}

@@ -46,7 +46,7 @@ function displayCars(filter = 'all') {
 
         carContainer.innerHTML += col; // Append the column to the container
 
-        // Create a new row after every 3 cards
+        // Create a new row after every 4 cards
         if ((index + 1) % 4 === 0) {
             carContainer.innerHTML += '<div class="w-100"></div>'; // Line break
         }
