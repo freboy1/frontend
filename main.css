@@ -1,4 +1,5 @@
 /* Default styles (Light Mode) */
+/* Default styles (Light Mode) */
 body {
     margin: 0;
     background-color: #ffffff; /* Light mode body background */
@@ -22,45 +23,184 @@ body {
     list-style-type: none;
     justify-content: center;
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Add spacing between items */
 }
 
 .advantages_lists li {
-    margin-right: 40px;
-    width: 279px;
-    height: 323px;
+    margin: 20px 0; /* Add margin for top and bottom */
+    padding: 15px; /* Add padding for better touch targets */
+    width: 90%; /* Default width */
+    max-width: 279px; /* Max width for consistent appearance */
+    height: auto; /* Adjust height dynamically */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-radius: 8px; /* Rounded corners */
 }
 
 .advantages_lists li img {
-    padding-left: 80px;
+    padding: 0;
+    max-width: 80%; /* Ensure images are not too large */
+    margin: 0 auto 10px auto; /* Center images */
+    display: block;
 }
 
 .advantages_lists li h3,
 .advantages_lists li p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-    color: black; /* Set list item text color to white */
+    font-size: 18px; /* Adjust font size for better readability */
+    color: black; /* Set text color */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .advantages_header {
+        font-size: 35px; /* Smaller header for mobile */
+        margin-top: 100px;
+    }
+
+    .advantages_lists {
+        gap: 30px; /* Increase space between items on mobile */
+    }
+
+    .advantages_lists li {
+        width: 100%; /* Full width on mobile */
+        margin: 10px 0; /* Add margin between items */
+    }
+
+    .advantages_lists li img {
+        max-width: 60%; /* Smaller images for mobile */
+    }
+
+    .advantages_lists li h3 {
+        font-size: 16px; /* Smaller headings for mobile */
+    }
+
+    .advantages_lists li p {
+        font-size: 14px; /* Smaller text for descriptions */
+    }
+}
+/* Dark Mode Styles */
+body.dark {
+    background-color: #141414; /* Main dark background */
+    color: white; /* Default text color */
+}
+
+body.dark .advantages_header,
+body.dark .blogs_header {
+    color: white; /* White text for headers */
+    background-color: #141414; /* Match dark mode background */
+}
+
+body.dark .advantages_lists li {
+    background-color: #1e1e1e; /* Dark background for list items */
+    color: white; /* White text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    border: 1px solid #333; /* Subtle border for separation */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+body.dark .advantages_lists li:hover {
+    background-color: #292929; /* Slightly lighter background on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+body.dark .advantages_lists li img {
+    filter: brightness(0.8); /* Dim images slightly */
+    margin-bottom: 15px; /* Add spacing below images */
+}
+
+body.dark .advantages_lists li h3,
+body.dark .advantages_lists li p {
+    color: #e0e0e0; /* Light gray for better readability */
+}
+
+body.dark .footer {
+    background-color: #1f1f1f; /* Match footer with dark theme */
+    color: #ccc; /* Light text */
+}
+
+body.dark .footer a:hover,
+body.dark .footer span:hover {
+    color: #888; /* Subtle highlight effect on hover */
+}
+/* Light Mode List Item Hover */
+.advantages_lists li {
+    background-color: #f9f9f9; /* Light background for list items */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd; /* Light border for separation */
+}
+
+.advantages_lists li:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.advantages_lists li img:hover {
+    transform: scale(1.1); /* Slight zoom for images on hover */
+    transition: transform 0.2s ease-in-out; /* Smooth image zoom effect */
+}
+.blogs {
+    padding: 50px 20px; /* Add padding for spacing */
+    text-align: center; /* Center-align the content */
+    background-color: #ffffff; /* Light mode background */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.blogs_header {
+    font-size: 45px;
+    font-family: RobotoB, sans-serif;
+    margin-bottom: 20px;
+    color: black; /* Header color for light mode */
+    transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
 .blogs_description {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    font-family: RobotoM, sans-serif; /* Added fallback font */
-    color: black; /* Set blogs description text color to white */
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #333; /* Slightly darker text for contrast in light mode */
 }
 
 .blogs_videos {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Ensure responsive layout */
+    gap: 20px; /* Add spacing between videos */
 }
 
 .blogs_videos iframe {
-    margin-right: 50px;
+    border: 4px solid #ddd; /* Add a border to videos */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effects */
 }
+
+.blogs_videos iframe:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    border-color: #aaa; /* Highlight border color on hover */
+}
+
+body.dark .blogs {
+    background-color: #141414; /* Dark background */
+    color: white; /* Light text */
+}
+
+body.dark .blogs_header {
+    color: white; /* Change header text color to white */
+}
+
+body.dark .blogs_description {
+    color: #ccc; /* Slightly dimmer text for readability */
+}
+
+body.dark .blogs_videos iframe {
+    border-color: #444; /* Darker border for videos */
+}
+
+body.dark .blogs_videos iframe:hover {
+    border-color: #666; /* Subtle highlight on hover */
+}
+ 
 
 /* Light Mode Footer Styles */
 .footer {
