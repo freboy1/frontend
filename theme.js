@@ -48,24 +48,33 @@ function setTheme(theme, userEmail = null) {
             currentUser.theme = theme;
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
         }
+    } else {
+        // If no user is logged in, set default theme in localStorage
+        localStorage.setItem('theme', theme);
     }
 }
 
 // Function to toggle the theme
 function toggleTheme() {
-    const currentTheme = JSON.parse(localStorage.getItem('currentUser')).theme || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    let currentTheme;
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (currentUser) {
+        currentTheme = currentUser.theme || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         setTheme(newTheme, currentUser.email); // Update the theme for the current user
+    } else {
+        // Toggle default theme if no user is logged in
+        currentTheme = localStorage.getItem('theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme); // Update theme without user
     }
 }
 
 // Check the saved theme in localStorage on page load
 window.addEventListener('DOMContentLoaded', () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const currentTheme = currentUser ? currentUser.theme : 'light';
+    const currentTheme = currentUser ? currentUser.theme : (localStorage.getItem('theme') || 'light');
     setTheme(currentTheme, currentUser ? currentUser.email : null); // Apply the saved theme
 
     // Update the Logout/Login button based on user data
@@ -92,7 +101,7 @@ function updateAuthButton() {
 
 // Function to log out the current user
 function logout() {
-    // Clear the theme and current user session data
+    // Clear the current user session data but keep theme
     localStorage.removeItem('currentUser'); // Only log out the current user
 
     // Redirect to login page
