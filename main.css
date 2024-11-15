@@ -200,88 +200,91 @@ body.dark .blogs_videos iframe {
 body.dark .blogs_videos iframe:hover {
     border-color: #666; /* Subtle highlight on hover */
 }
- 
-
-/* Light Mode Footer Styles */
-.footer {
-    margin-top: 50px;
-    background-color: #1f1f1f; /* Set footer background to #1f1f1f */
-    color: white; /* Set footer text color to white */
-}
-
-.col, 
-.github-link,
-.col a {
-    color: white; /* Set footer text color to white */
-    font-size: 20px;
-}
-
-.col-head {
-    font-size: 25px;
-    color: white; /* Set footer header text color to white */
-}
-
-/* Dark Mode Styles */
-body.dark {
-    background-color: #141414; /* Change dark mode background to #141414 */
-    color: white; /* Light text color */
-}
-
-body.dark .advantages_header,
-body.dark .blogs_header {
-    color: white; /* Change headers to white in dark mode */
-    background-color: #141414;
-}
-
-body.dark .advantages_lists li h3,
-body.dark .advantages_lists li p,
-body.dark .blogs_description {
-    color: white; /* Light text for lists and descriptions in dark mode */
-}
-
-body.dark .footer {
-    background-color: #1f1f1f; /* Dark mode footer background */
-}
-
-body.dark .col, 
-body.dark .github-link,
-body.dark .col a {
-    color: white; /* Light text color for links in dark mode */
-}
-
-body.dark .col-head {
-    color: white; /* Light color for header text in dark mode */
-}
-
-.images, .idk {
-    margin: auto; /* Center images and idk */
-}
 
 .custom-height .carousel-item img {
     height: 600px; 
     object-fit: cover; 
 }
 
-#popupForm {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    background-color: white; /* Light background for popup */
-    padding: 20px; 
-    border: 1px solid #ccc;
+
+/* Footer General Styles */
+.footer {
+    background-color: #f8f9fa; /* Light mode background */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Subtle border for separation */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode Popup Styles */
-body.dark #popupForm {
-    background-color: #444; /* Dark background for popup */
-    border: 1px solid #555; /* Darker border for popup */
+body.dark .footer {
+    background-color: #1f1f1f; /* Dark mode background */
+    border-top: 1px solid #444; /* Darker border for separation */
 }
 
-body.dark .navbar-toggler {
-    background-color: #ffffff;
+/* Column Header Styles */
+.col-head {
+    font-size: 1.2rem;
+    color: #333; /* Text color for light mode */
+    margin-bottom: 10px; /* Space below headers */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.footer a:hover,
+
+body.dark .col-head {
+    color: #f2f2f2; /* Light text color in dark mode */
+}
+
+/* Link Styles */
+.footer a {
+    text-decoration: none;
+    color: #007bff; /* Default link color */
+    transition: color 0.3s ease;
+}
+
+body.dark .footer a {
+    color: #f2f2f2; /* Dark mode link color */
+}
+
+.footer a:hover {
+    color: #0056b3; /* Hover effect for light mode */
+}
+
+body.dark .footer a:hover {
+    color: #f2f2f2; /* Hover effect for dark mode */
+}
+
+/* Span (Contact Info) Styles */
+.footer span {
+    color: #555; /* Default span color */
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+body.dark .footer span {
+    color: #bbb; /* Light color in dark mode */
+}
+
 .footer span:hover {
-    color: #444;
+    color: #333; /* Hover effect for light mode */
+}
+
+body.dark .footer span:hover {
+    color: #f2f2f2; /* Hover effect for dark mode */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column; /* Stack columns for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .footer .col {
+        margin-bottom: 10px; /* Add spacing between stacked items */
+    }
+
+    .footer {
+        padding: 30px 10px; /* Reduce padding for mobile */
+    }
 }
