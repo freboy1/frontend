@@ -66,3 +66,7 @@
         font-size: 1.1rem;
     }
 }
+
+body.dark #brandFilter {
+    color: black;
+}
