@@ -1,49 +1,135 @@
 /* Card Styling */
 #carContainer .card {
     margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
-    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Adding smooth transition effects */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    border-radius: 15px; /* More rounded corners for a sleek look */
+    background-color: #fff; /* White background for the cards */
+    overflow: hidden; /* Ensures no content overflows the card */
 }
 
+/* Hover effect: Scale and shadow effect */
 #carContainer .card:hover {
     transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background-color: #f9f9f9; /* Subtle background change on hover */
 }
 
+/* Card image styling */
 .card-img-top {
     height: 200px;
     object-fit: cover; /* Ensures image fills the card area */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-/* Star Rating */
-.star-rating {
+/* Card body (content area) styling */
+.card-body {
+    padding: 15px;
     display: flex;
-    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly space out card content */
+    text-align: center; /* Center-align text for consistency */
 }
 
-.star {
-    font-size: 1.5rem; /* Adjusted size */
-    color: gold;
-    transition: color 0.2s ease; /* Smooth color transition */
+.card-body h5 {
+    font-size: 1.3rem; /* Larger title for better readability */
+    color: #333; /* Dark color for the title */
+    font-weight: 600; /* Make the title bold */
+    margin-bottom: 10px; /* Space below the title */
 }
 
-.star-rating .star:hover,
-.star-rating .star:hover ~ .star {
-    color: gold; /* Ensure stars remain gold on hover */
+.card-body p {
+    font-size: 1rem;
+    color: #555; /* Light gray for text */
+    margin-bottom: 20px; /* Space before the button */
 }
 
-/* Mobile (max-width: 576px) */
+/* Button styling within the card */
+.card-body .btn {
+    background-color: #007bff; /* Primary blue color */
+    color: white; /* Text color for the button */
+    font-size: 1.1rem; /* Slightly larger font size */
+    padding: 10px 20px; /* More padding for the button */
+    border-radius: 30px; /* Rounded corners for the button */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.card-body .btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Card for mobile screens */
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 15px;
+        border-radius: 10px; /* Smaller radius for mobile */
+    }
+
+    .card-img-top {
+        height: 150px; /* Adjust image size for mobile */
+    }
+
+    .card-body h5 {
+        font-size: 1.1rem; /* Smaller font size for mobile */
+    }
+
+    .card-body p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    .card-body .btn {
+        font-size: 1rem; /* Adjust button size */
+    }
+}
+
+/* Card for tablet screens */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+        border-radius: 12px; /* Slightly smaller radius for tablet */
+    }
+
+    .card-img-top {
+        height: 175px; /* Adjust image size for tablet */
+    }
+
+    .card-body h5 {
+        font-size: 1.2rem; /* Adjust title font size for tablet */
+    }
+
+    .card-body p {
+        font-size: 1rem; /* Adjust description font size */
+    }
+
+    .card-body .btn {
+        font-size: 1.1rem; /* Slightly larger button font */
+    }
+}
+
+/* Dark Mode Styles for Cards */
+body.dark .card {
+    background-color: #2c2c2c !important; /* Dark background for the card */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2) !important; /* Slightly lighter shadow in dark mode */
+}
+
+
+body.dark .card-body h5,
+body.dark .card-body p {
+    color: white; /* Light text color for dark mode */
+}
+
+body.dark .card-body .btn {
+    background-color: #0056b3; /* Darker button color for dark mode */
+}
+
+/* Mobile-friendly container */
 @media (max-width: 576px) {
     .container-fluid {
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    .card {
-        margin-bottom: 15px;
     }
 
     .btn-outline-success,
@@ -52,21 +138,27 @@
     }
 }
 
-/* Tablet (max-width: 768px) */
-@media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
 
-    .card-img-top {
-        height: 150px;
-    }
-
-    .btn-outline-success {
-        font-size: 1.1rem;
-    }
+/* Button styling within the card */
+.card-body .btn {
+    background-color: #007bff; /* Primary blue color */
+    color: white; /* Text color for the button */
+    font-size: 1.3rem; /* Font size */
+    padding: 15px; /* Padding for height */
+    width: 80%; /* Make the button take up 80% of the card's width */
+    border-radius: 30px; /* Rounded corners */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    display: block; /* Ensure the button behaves as a block element */
+    margin: 0 auto; /* Center the button horizontally */
 }
 
-body.dark #brandFilter {
+.card-body .btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+#brandFilter {
     color: black;
 }

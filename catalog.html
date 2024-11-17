@@ -55,15 +55,6 @@
             background-color: #1f1f1f;
         }
 
-        .star-rating {
-            display: flex;
-            cursor: pointer;
-        }
-
-        .star {
-            font-size: 1.5rem; /* Size of stars */
-            color: gold;
-        }
 
         
     </style>
@@ -112,8 +103,8 @@
 
     <main>
         <div class="container">
-            <div class="row" id="carContainer">
-                <!-- Car cards will be injected here by JavaScript -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="carContainer">
+                <!-- Cards will be dynamically injected here -->
             </div>
         </div>
     </main>
