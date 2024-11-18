@@ -267,3 +267,120 @@ body.dark .col a {
     }
 }
 
+
+.card{
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+     
+    background-color: #fff;
+  }
+  
+  
+  
+  .stats{
+  
+        background: #f2f5f8 !important;
+  
+      color: #000 !important;
+  }
+  .articles{
+    font-size:10px;
+    color: #a1aab9;
+  }
+  .number1{
+    font-weight:500;
+  }
+  .followers{
+      font-size:10px;
+    color: #a1aab9;
+  
+  }
+  .number2{
+    font-weight:500;
+  }
+  .rating{
+      font-size:10px;
+    color: #a1aab9;
+  }
+  .number3{
+    font-weight:500;
+  }
+
+  /* Submit button hover effects */
+#it-is-my-car {
+    position: relative;
+    overflow: hidden;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Shadow Grow Effect */
+#it-is-my-car:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* Ripple Effect */
+#it-is-my-car:active {
+    transform: scale(1);
+}
+
+#it-is-my-car::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#it-is-my-car:active::after {
+    width: 300%;
+    height: 300%;
+    animation: ripple 0.6s linear;
+    opacity: 1;
+}
+
+/* Ripple animation */
+@keyframes ripple {
+    0% {
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        opacity: 0.6;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        width: 300%;
+        height: 300%;
+        opacity: 0;
+    }
+}
+
+/* Rotate Icon after Submit */
+#it-is-my-car.submitted i {
+    animation: rotateIcon 1s ease-in-out;
+}
+
+/* Rotation animation */
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
