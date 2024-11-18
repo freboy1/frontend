@@ -171,3 +171,99 @@ body.dark .github-link,
 body.dark .col a {
     color: #cccccc;             /* Slightly lighter text for links */
 }
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .form_header {
+        font-size: 30px;
+        padding-top: 50px;
+    }
+
+    .form_desc {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .main_contact_info {
+        flex-direction: column; /* Stack fields vertically */
+        align-items: center;
+    }
+
+    .main_contact_info input,
+    .main_contact_info select,
+    textarea {
+        width: 90%; /* Adjust width for small screens */
+        margin-bottom: 20px;
+    }
+
+    .button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .container-fluid {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .footer .col,
+    .footer .col a {
+        font-size: 16px;
+    }
+
+    .faq-panel p {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
+/* Very small devices (e.g., phones in portrait mode) */
+@media (max-width: 576px) {
+    .form_header {
+        font-size: 24px;
+    }
+
+    .form_desc {
+        font-size: 16px;
+    }
+
+    .auth-button,
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .footer .col-head {
+        font-size: 20px;
+    }
+}
+
+
+/* Center form description */
+.form_desc {
+    text-align: center;
+}
+
+/* Make inputs, select, and textarea uniform and centered on mobile */
+@media (max-width: 768px) {
+    input,
+    textarea,
+    select {
+        width: 90%; /* Same width for all */
+        margin: 10px auto; /* Centered horizontally */
+        display: block; /* Block-level for alignment */
+        padding: 10px; /* Uniform padding */
+        box-sizing: border-box; /* Include padding in width */
+        font-size: 16px; /* Consistent text size */
+    }
+
+    button {
+        width: 90%; /* Match other elements */
+        margin: 10px auto;
+        display: block;
+    }
+}
+
