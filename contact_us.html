@@ -270,19 +270,6 @@
         return; // Stop form submission and animation if validation fails
     }
 
-    // If validation passes, update user info in localStorage (optional)
-    const user = {
-        name: nameInput.value,
-        gender: genderSelect.value,
-        email: emailInput.value,
-        comments: commentsInput.value
-    };
-    localStorage.setItem('currentUser', JSON.stringify(user));
-
-    // Display the user info on the page (optional)
-    document.getElementById('user-name').textContent = user.name;
-    document.getElementById('user-email').textContent = user.email;
-
     // Now trigger the icon rotation animation
     const submitButton = document.getElementById('it-is-my-car');
     submitButton.classList.add('submitted');
@@ -292,6 +279,7 @@
         submitButton.classList.remove('submitted');
     }, 1000); // 1 second for the rotation animation
 });
+
 
         </script>
     </body>
