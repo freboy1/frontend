@@ -14,12 +14,15 @@
         }
 
         .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh;
+    flex-direction: column;
+    padding: 20px; /* Add some padding for better appearance on smaller screens */
+    box-sizing: border-box; /* Ensure padding doesn't affect centering */
+}
+
 
         .card-body {
             width: 100%;
@@ -90,6 +93,10 @@
 
         small {
             font-size: 14px;
+        }
+        .row {
+            width: 1200px;
+            justify-content: center;
         }
     </style>
 </head>
