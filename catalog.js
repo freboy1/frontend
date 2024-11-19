@@ -71,7 +71,7 @@ function displayCars(filter = 'all') {
                     <div class="card-body">
                         <h5 class="card-title">${car.brand} ${car.model}</h5>
                         <p class="card-text">${car.description}</p>
-                        <a href="#" class="btn btn-primary">Price</a>
+                        <a href="https://kolesa.kz/" class="btn btn-primary">Price</a>
                         
                     </div>
                 </div>
