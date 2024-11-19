@@ -77,7 +77,25 @@
         .ml-3 {
             margin-left: 10px;
         }
+        @media (min-width: 768px) and (max-width: 1057px) {
+        .navbar-brand {
+            margin-left: 20px; /* Adjust margin for AutoHub on tablets */
+        }
 
+        .container-fluid {
+            margin-left: 10px; /* Reduce left margin for the container */
+            margin-right: 10px; /* Reduce right margin for the container */
+        }
+    }
+
+    @media (max-width: 990px) {
+        .nav-link {
+            margin-left: 20px;
+        }
+        #themeToggle {
+            margin-left: 20px;
+        }
+    }
         </style>
     </head>
     
@@ -95,7 +113,7 @@
                                 <a class="nav-link" href="catalog.html">Catalog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact_us.html">Contact Us</a>
+                                <a class="nav-link" href="contact_us.html">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <button id="authButton" class="auth-button" onclick="handleAuth()" style="margin-left: 20px;">Login</button>
